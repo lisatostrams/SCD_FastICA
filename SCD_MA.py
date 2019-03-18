@@ -144,7 +144,7 @@ def SCD_MA(img=None):
 
     #% apply ICA  
 
-   fastica = FastICA(n_components=3,algorithm='deflation',max_iter=200)
+   fastica = FastICA(n_components=3,algorithm='deflation',max_iter=20)
    
    
    # LT: in matlab moet je matrix vorm [channels,samples] hebben, bij python andersom..
