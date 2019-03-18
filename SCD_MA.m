@@ -10,13 +10,13 @@ clc, close all;
     Statcount=1;StatMesur=zeros(3,Level*4);
 
    
-    %% Reshape I into 3*(h*w)
+    % Reshape I into 3*(h*w)
      B = double(I(:,:,3));
      G = double(I(:,:,2));
      R = double(I(:,:,1));
      RGB = [reshape(R,1,h*w); reshape(G,1,h*w); reshape(B,1,h*w)];
      OD_M = -log((RGB+1)/255); 
-     
+     %
      % optical density of images
      OD = -log((double(I)+1)/255); 
  
@@ -27,7 +27,9 @@ clc, close all;
     A2=OD(:,:,2);
     A3=OD(:,:,3);
     Bands=cell(Level,4);
-     
+    %
+    %%
+
     for i=1:Level
             %% Generate Bands  
             [A1,H1,V1,D1] = dwt2(A1,wname);
@@ -71,7 +73,7 @@ clc, close all;
 
     end
 
-    % Sort Kourtosis matrix
+    %% Sort Kourtosis matrix
     [~,d2] = sort(StatMesur(1,:),'descend');
      StatMesur=StatMesur(:,d2);
 
