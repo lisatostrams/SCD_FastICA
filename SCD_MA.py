@@ -144,6 +144,10 @@ def SCD_MA(img=None):
 
     #% apply ICA  
 
+    """ Matlab implementatie gebruikt deze settings:
+        Used approach [ defl ].
+        Used nonlinearity [ pow3 ].
+    """
    fastica = FastICA(n_components=3,algorithm='deflation',max_iter=20)
    
    
