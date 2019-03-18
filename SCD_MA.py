@@ -147,7 +147,8 @@ def SCD_MA(img=None):
    fastica = FastICA(n_components=3,algorithm='deflation',max_iter=200)
    
    
-   
+   # LT: in matlab moet je matrix vorm [channels,samples] hebben, bij python andersom..
+   # https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.FastICA.html
    fastica = fastica.fit(zca.T)  #LT: volgens de doc moet je m zo gebruiken.. duurt heel lang :(
    A = fastica.components_
    # fastica(n_components=3, FinalSignal, mstring('numOfIC'), 3)            #W{1}{1} is 3*3 matrix (each row for one source
